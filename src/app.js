@@ -23,28 +23,28 @@ hbs.registerPartials(partialsPath)   // to set path for partials ie. headers and
 
 
 app.get('', (req, res) => {
-    if(!req.query.address) {         // this statement will look for address in the link in browser. Eg: (localhost:3000/address=noida)         
-        return res.send('Error! Please provide address')
-    }
+    // if(!req.query.address) {         // this statement will look for address in the link in browser. Eg: (localhost:3000/address=noida)         
+    //     return res.send('Error! Please provide address')
+    // }
 
-    const city = req.query.address
-    return geocode(city, (error, data) => {
-        if (error) {
-            return res.send({
-                error
-            })
-        }
-        forecast(data.latitude, data.longitude, (city, temperature, time) => {
-            res.send({
-                city,
-                temperature,
-                time
-            })
-            // console.log(city)
-            // console.log(' -temperature', temperature)
-            // console.log(' -Recorded at', time)
-        })
-    })
+    // const city = req.query.address
+    // return geocode(city, (error, data) => {
+    //     if (error) {
+    //         return res.send({
+    //             error
+    //         })
+    //     }
+    //     forecast(data.latitude, data.longitude, (city, temperature, time) => {
+    //         res.send({
+    //             city,
+    //             temperature,
+    //             time
+    //         })
+    //         // console.log(city)
+    //         // console.log(' -temperature', temperature)
+    //         // console.log(' -Recorded at', time)
+    //     })
+    // })
     res.render('index', {
         title: 'Weather app',
         name: 'Lohit Agarwalla'
