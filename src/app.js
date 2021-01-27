@@ -6,6 +6,7 @@ const geocode = require('./geocode')
 const forecast = require('./forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // console.log(__dirname)    
 //bellow line is used to create a path to public folder which is used to keep css html and js files
@@ -92,6 +93,6 @@ app.get('*', (req, res) => {
 // app.com/help
 // app.com/about
 
-app.listen(3000, () => {
-    console.log('Server is up in port 3000')
+app.listen(port, () => {
+    console.log('Server is up in port port ' + port)
 })
